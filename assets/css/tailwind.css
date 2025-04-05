@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@font-face {
+  font-family: "Poppins";
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+}
+
+@layer base {
+  * {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@theme {
+  --color-light: #ffffff;
+  --color-light-50: #ffffff;
+  --color-light-100: #f9f9f9;
+  --color-light-200: #ececec;
+  --color-light-300: #dfdfdf;
+  --color-light-400: #d2d2d2;
+  --color-light-500: #c6c6c6;
+  --color-light-600: #b9b9b9;
+  --color-light-700: #acacac;
+  --color-light-800: #9f9f9f;
+  --color-light-900: #939393;
+  --color-light-950: #8c8c8c;
+
+  --color-dark: #000000;
+  --color-dark-50: #737373;
+  --color-dark-100: #6c6c6c;
+  --color-dark-200: #606060;
+  --color-dark-300: #535353;
+  --color-dark-400: #464646;
+  --color-dark-500: #393939;
+  --color-dark-600: #2d2d2d;
+  --color-dark-700: #202020;
+  --color-dark-800: #131313;
+  --color-dark-900: #060606;
+  --color-dark-950: #000000;
+
+  --color-primary: #04d9ff;
+  --color-primary-50: #f2feff;
+  --color-primary-100: #e6fdff;
+  --color-primary-200: #c2f9ff;
+  --color-primary-300: #9cf5ff;
+  --color-primary-400: #4fe8ff;
+  --color-primary-500: #04d9ff;
+  --color-primary-600: #05b9e6;
+  --color-primary-700: #0290bf;
+  --color-primary-800: #026999;
+  --color-primary-900: #014773;
+  --color-primary-950: #01294a;
+}
+
+.transition-all-500 {
+  @apply transition-all duration-500;
+}
+
+.bg-color {
+  @apply bg-light dark:bg-dark;
+}
+.bg-color-50 {
+  @apply bg-light-50 dark:bg-dark-50;
+}
+.bg-color-100 {
+  @apply bg-light-100 dark:bg-dark-100;
+}
+.bg-color-200 {
+  @apply bg-light-200 dark:bg-dark-200;
+}
+.bg-color-300 {
+  @apply bg-light-300 dark:bg-dark-300;
+}
+.bg-color-400 {
+  @apply bg-light-400 dark:bg-dark-400;
+}
+.bg-color-500 {
+  @apply bg-light-500 dark:bg-dark-500;
+}
+.bg-color-600 {
+  @apply bg-light-600 dark:bg-dark-600;
+}
+.bg-color-700 {
+  @apply bg-light-700 dark:bg-dark-700;
+}
+.bg-color-800 {
+  @apply bg-light-800 dark:bg-dark-800;
+}
+.bg-color-900 {
+  @apply bg-light-900 dark:bg-dark-900;
+}
+.bg-color-950 {
+  @apply bg-light-950 dark:bg-dark-950;
+}
+.text-color {
+  @apply text-dark dark:text-light;
+}
+.text-color-50 {
+  @apply text-dark-50 dark:text-light-50;
+}
+.text-color-100 {
+  @apply text-dark-100 dark:text-light-100;
+}
+.text-color-200 {
+  @apply text-dark-200 dark:text-light-200;
+}
+.text-color-300 {
+  @apply text-dark-300 dark:text-light-300;
+}
+.text-color-400 {
+  @apply text-dark-400 dark:text-light-400;
+}
+.text-color-500 {
+  @apply text-dark-500 dark:text-light-500;
+}
+.text-color-600 {
+  @apply text-dark-600 dark:text-light-600;
+}
+.text-color-700 {
+  @apply text-dark-700 dark:text-light-700;
+}
+.text-color-800 {
+  @apply text-dark-800 dark:text-light-800;
+}
+.text-color-900 {
+  @apply text-dark-900 dark:text-light-900;
+}
+.text-color-950 {
+  @apply text-dark-950 dark:text-light-950;
+}
+
+.border-color {
+  @apply border-light dark:border-dark;
+}
+.border-color-50 {
+  @apply border-light-50 dark:border-dark-950;
+}
+.border-color-100 {
+  @apply border-light-100 dark:border-dark-900;
+}
+.border-color-200 {
+  @apply border-light-200 dark:border-dark-800;
+}
+.border-color-300 {
+  @apply border-light-300 dark:border-dark-700;
+}
+.border-color-400 {
+  @apply border-light-400 dark:border-dark-600;
+}
+.border-color-500 {
+  @apply border-light-500 dark:border-dark-500;
+}
+.border-color-600 {
+  @apply border-light-600 dark:border-dark-400;
+}
+.border-color-700 {
+  @apply border-light-700 dark:border-dark-300;
+}
+.border-color-800 {
+  @apply border-light-800 dark:border-dark-200;
+}
+.border-color-900 {
+  @apply border-light-900 dark:border-dark-100;
+}
+.border-color-950 {
+  @apply border-light-950 dark:border-dark-50;
+}
+
+/* Custom classes for specific elements */
+.header-container {
+  @apply px-6 lg:px-48 xl:px-72 2xl:px-96;
+}
+
+.footer-container {
+  @apply px-6 lg:px-48 xl:px-72 2xl:px-96;
+}
