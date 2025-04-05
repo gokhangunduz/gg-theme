@@ -7,10 +7,9 @@
 
     <p>Software Developer</p>
 
-    <p class="text-xs">&copy; <?php echo date("Y"); ?> • <?php bloginfo(
-            "name"
-        ); ?></p>
+    <p class="text-xs">&copy; <?php echo date("Y"); ?> • <?php bloginfo("name"); ?></p>
 </footer>
+<canvas id="canvas"></canvas>
 </body>
 <?php wp_footer(); ?>
 

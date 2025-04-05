@@ -19,6 +19,8 @@ function themeAssets()
     wp_enqueue_style('icon', 'https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css');
 
     wp_enqueue_script('theme', get_template_directory_uri() . '/assets/js/theme.js', [], false, true);
+
+    wp_enqueue_script('cursor', get_template_directory_uri() . '/assets/js/cursor.js', [], false, true);
 }
 
 add_action('after_setup_theme', 'themeSettings');

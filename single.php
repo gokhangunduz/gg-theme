@@ -1,6 +1,11 @@
 <?php get_header(); ?>
-<article class="wrapper">
+<article class="wrapper flex flex-col gap-6 animate__animated animate__fadeInUp">
+    <?php if (has_post_thumbnail()): ?>
+        <img class="w-full h-96 object-cover object-center rounded-lg" src="<?php echo get_the_post_thumbnail_url(); ?>"
+            alt="<?php the_title(); ?>" />
+        <?php
+    endif; ?>
     <h1><?php the_title(); ?></h1>
-    <p><?php the_content(); ?></p>
+    <?php the_content(); ?>
 </article>
 <?php get_footer(); ?>

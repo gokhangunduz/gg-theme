@@ -12,9 +12,7 @@
     <header
         class="flex items-center justify-between h-16 border-b shadow-sm wrapper text-color border-color-300  transition-all-500 animate__animated animate__fadeInDown">
 
-        <a href="<?php echo esc_url(
-            home_url("/")
-        ); ?>" <h1 class="flex gap-0.5 text-xl"><?php getBlogTitle(); ?>
+        <a href="<?php echo esc_url(home_url("/")); ?>" <h1 class="flex gap-0.5 text-xl"><?php getBlogTitle(); ?>
             </h1>
         </a>
 
@@ -23,10 +21,8 @@
                 toggle
             </button>
             <nav>
-                <!-- <?php wp_nav_menu([
-                    "theme_location" => "main-menu",
-                ]); ?> -->
+                <!-- <?php wp_nav_menu(["theme_location" => "main-menu",]); ?> -->
                 menu
             </nav>
         </div>
-    </header> 
+    </header>

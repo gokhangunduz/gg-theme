@@ -11,6 +11,40 @@
   * {
     font-family: "Poppins", sans-serif;
   }
+  h1 {
+    @apply text-3xl font-bold leading-tight text-dark dark:text-light;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold leading-snug text-dark dark:text-light;
+  }
+
+  h3 {
+    @apply text-xl font-medium leading-snug text-dark dark:text-light;
+  }
+
+  h4 {
+    @apply text-lg font-medium text-dark dark:text-light;
+  }
+
+  h5 {
+    @apply text-base font-semibold text-dark dark:text-light;
+  }
+
+  h6 {
+    @apply text-sm font-medium text-dark dark:text-light;
+  }
+  p {
+    @apply text-base leading-relaxed text-dark-300 dark:text-light-300;
+  }
+
+  ul {
+    @apply list-disc pl-5;
+  }
+
+  ol {
+    @apply list-decimal pl-5;
+  }
 }
 
 @theme {
@@ -172,4 +206,8 @@
 
 .wrapper {
   @apply px-10 sm:px-24 md:px-36 lg:px-48 xl:px-72 2xl:px-96;
+}
+
+#canvas {
+  @apply fixed inset-0 w-screen h-screen pointer-events-none;
 }
