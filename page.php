@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main>
+<main class="wrapper">
     <h1><?php the_title(); ?></h1>
     <div><?php the_content(); ?></div>
 </main>

@@ -169,10 +169,7 @@
 }
 
 /* Custom classes for specific elements */
-.header-container {
-  @apply px-6 lg:px-48 xl:px-72 2xl:px-96;
-}
 
-.footer-container {
-  @apply px-6 lg:px-48 xl:px-72 2xl:px-96;
+.wrapper {
+  @apply px-10 sm:px-24 md:px-36 lg:px-48 xl:px-72 2xl:px-96;
 }
