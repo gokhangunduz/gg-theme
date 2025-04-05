@@ -34,8 +34,9 @@
   h6 {
     @apply text-sm font-medium text-dark dark:text-light;
   }
+
   p {
-    @apply text-base leading-relaxed text-dark-300 dark:text-light-300;
+    @apply text-base leading-relaxed text-dark-400 dark:text-light-400;
   }
 
   ul {
@@ -45,6 +46,11 @@
   ol {
     @apply list-decimal pl-5;
   }
+}
+
+:root {
+  --header-height: 4rem;
+  --footer-height: 12rem;
 }
 
 @theme {
@@ -206,6 +212,10 @@
 
 .wrapper {
   @apply px-10 sm:px-24 md:px-36 lg:px-48 xl:px-72 2xl:px-96;
+}
+
+.fill {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
 #canvas {
