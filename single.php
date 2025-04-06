@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<article class="wrapper flex flex-col gap-6 py-10 fill animate-fadeInUp">
+<article id="single" class="flex flex-col gap-6 animate-fadeInUp">
     <?php if (has_post_thumbnail()): ?>
         <img class="w-full h-96 object-cover object-center rounded-lg" src="<?php echo get_the_post_thumbnail_url(); ?>"
             alt="<?php the_title(); ?>" />

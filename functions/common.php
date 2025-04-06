@@ -11,5 +11,4 @@ function getBlogTitle()
 
     echo implode(" ", $spans);
 }
-
 ?>

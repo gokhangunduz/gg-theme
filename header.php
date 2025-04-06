@@ -8,10 +8,8 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="bg-color transition-all-500">
-    <div class="animate-fadeInUp"></div>
-    <header
-        class="flex items-center justify-between h-[var(--header-height)] border-y  wrapper text-color border-color-500 transition-all-500 animate-fadeInDown">
+<body>
+    <header class="sticky top-0 z-50 flex items-center justify-between animate-fadeInDown">
 
         <a href="<?php echo esc_url(home_url("/")); ?>" <h1 class="flex gap-0.5 text-xl"><?php getBlogTitle(); ?>
             </h1>
