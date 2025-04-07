@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <header class="sticky top-0 z-50 flex items-center justify-between">
+    <header class="sticky top-0 z-1 flex items-center justify-between">
 
         <a href="<?php echo esc_url(home_url("/")); ?>" <h1 class="flex gap-0.5 text-xl"><?php getBlogTitle(); ?>
             </h1>
@@ -19,9 +19,9 @@
             <button class="cursor-pointer" id="theme-toggle">
                 toggle
             </button>
-            <nav>
-                <!-- <?php wp_nav_menu(["theme_location" => "main-menu",]); ?> -->
-                menu
-            </nav>
+            <div id="menu-toggle">
+                <i class="text-2xl ri-menu-line"></i>
+            </div>
         </div>
     </header>
+    <?php get_template_part('template-parts/menu'); ?>

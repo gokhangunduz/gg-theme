@@ -19,6 +19,8 @@ function themeAssets()
 
     wp_enqueue_script('theme', get_template_directory_uri() . '/assets/js/theme.js', [], false, true);
 
+    wp_enqueue_script('menu', get_template_directory_uri() . '/assets/js/menu.js', [], null, true);
+
     if (!wp_is_mobile()) {
         wp_enqueue_script(
             'cursor',

@@ -113,7 +113,8 @@
   header,
   footer,
   main,
-  article[id="single"] {
+  article[id="single"],
+  section {
     @apply px-10 sm:px-24 md:px-36 lg:px-48 xl:px-72 2xl:px-96;
   }
 
@@ -156,6 +157,17 @@ article[id="single"] {
   }
 }
 
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
 main,
 article[id="single"],
 footer {
@@ -168,4 +180,10 @@ header {
   animation-duration: 1s;
   animation-fill-mode: both;
   animation-name: fadeInDown;
+}
+
+nav {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeInRight;
 }
