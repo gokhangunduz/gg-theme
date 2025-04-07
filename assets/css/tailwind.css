@@ -86,11 +86,11 @@
   }
 
   ul {
-    @apply list-disc pl-5;
+    @apply pl-5 text-dark dark:text-light;
   }
 
   ol {
-    @apply list-decimal pl-5;
+    @apply pl-5 text-dark dark:text-light;
   }
 
   body {
@@ -171,6 +171,28 @@ article[id="single"] {
   }
 }
 
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
 main,
 article[id="single"],
 footer {
@@ -189,4 +211,10 @@ nav {
   animation-duration: 1s;
   animation-fill-mode: both;
   animation-name: fadeInRight;
+}
+
+#theme-toggle {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: rotateIn;
 }

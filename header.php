@@ -16,10 +16,10 @@
         </a>
 
         <div class="flex items-center gap-4">
-            <button class="cursor-pointer" id="theme-toggle">
-                toggle
+            <button id="theme-toggle" class="cursor-pointer">
+                <i class="text-2xl ri-sun-line"></i>
             </button>
-            <div id="menu-toggle">
+            <div id="menu-toggle" class="cursor-pointer">
                 <i class="text-2xl ri-menu-line"></i>
             </div>
         </div>
