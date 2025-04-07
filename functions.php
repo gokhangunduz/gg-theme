@@ -7,7 +7,7 @@ function themeSettings()
     add_theme_support('post-thumbnails');
 
     register_nav_menus(array(
-        'main-menu' => __('Header Menu', 'gokhangunduz')
+        'main-menu' => __('Header Menu', 'gg')
     ));
 }
 
