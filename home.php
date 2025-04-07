@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="space-y-10 animate-fadeInUp">
+<main class="space-y-10">
     <?php if (have_posts()):
         while (have_posts()):
             the_post(); ?>

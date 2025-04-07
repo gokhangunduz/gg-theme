@@ -15,8 +15,6 @@ function themeAssets()
 {
     wp_enqueue_style('style', get_template_directory_uri() . '/assets/css/style.css');
 
-    wp_enqueue_style('animate', get_template_directory_uri() . '/assets/css/animate.css');
-
     wp_enqueue_style('icon', 'https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css');
 
     wp_enqueue_script('theme', get_template_directory_uri() . '/assets/js/theme.js', [], false, true);

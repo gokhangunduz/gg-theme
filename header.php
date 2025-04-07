@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <header class="sticky top-0 z-50 flex items-center justify-between animate-fadeInDown">
+    <header class="sticky top-0 z-50 flex items-center justify-between">
 
         <a href="<?php echo esc_url(home_url("/")); ?>" <h1 class="flex gap-0.5 text-xl"><?php getBlogTitle(); ?>
             </h1>
