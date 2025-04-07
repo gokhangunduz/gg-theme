@@ -125,6 +125,31 @@
   article[id="single"] {
     @apply py-10;
   }
+
+  section {
+    @apply py-10;
+  }
+
+  form[id="commentform"] {
+    @apply grid grid-cols-2 gap-4;
+  }
+
+  form[id="commentform"] textarea {
+    @apply col-span-2 h-36 text-dark dark:text-light border border-light-600 dark:border-dark-400 px-3 py-2 rounded resize-none;
+  }
+
+  form[id="commentform"] input[type="text"],
+  form[id="commentform"] input[type="email"] {
+    @apply col-span-2 md:col-span-1 h-10 px-2 py-1 text-dark dark:text-light border border-light-600 dark:border-dark-400 rounded;
+  }
+
+  form p.comment-form-cookies-consent {
+    @apply col-span-2 text-dark dark:text-light;
+  }
+
+  form[id="commentform"] button {
+    @apply col-span-2 h-11 text-dark bg-light-300 hover:bg-light-500 border-light-400 dark:text-light dark:bg-dark-800 hover:dark:bg-dark-600 dark:border-dark-700 border rounded cursor-pointer transition-all duration-500;
+  }
 }
 
 /* Custom classes for specific elements */

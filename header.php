@@ -16,9 +16,9 @@
         </a>
 
         <div class="flex items-center gap-4">
-            <button id="theme-toggle" class="cursor-pointer">
+            <div id="theme-toggle" class="cursor-pointer">
                 <i class="text-2xl ri-sun-line"></i>
-            </button>
+            </div>
             <div id="menu-toggle" class="cursor-pointer">
                 <i class="text-2xl ri-menu-line"></i>
             </div>
