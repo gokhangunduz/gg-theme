@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="space-y-10">
+<main class="flex flex-col gap-8">
     <?php if (have_posts()):
         while (have_posts()):
             the_post(); ?>
@@ -26,8 +26,8 @@
 
     <?php
     the_posts_pagination([
-        'prev_text' => sprintf('&laquo; %s', esc_html(_x('Previous', 'previous set of posts', 'default'))),
-        'next_text' => sprintf('%s &raquo;', esc_html(_x('Next', 'next set of posts', 'default'))),
+            'prev_text' => '&laquo;',  
+            'next_text' => '&raquo;',  
         ]);
     ?>
 

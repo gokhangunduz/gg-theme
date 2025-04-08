@@ -6,13 +6,14 @@ function themeSettings()
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
 
+    add_filter('navigation_markup_template', 'paginationSetter');
+
+
     register_nav_menus(array(
         'main-menu' => __('Main Menu', 'gg')
     ));
 
-    add_filter('excerpt_more', function () {
-    return '...';
-});
+    add_filter('excerpt_more', 'excerptMoreSetter');
 }
 
 function themeAssets()

@@ -11,4 +11,16 @@ function getBlogTitle()
 
     echo implode(" ", $spans);
 }
+
+function excerptMoreSetter() {
+    return '...';
+}
+
+function paginationSetter($output) {
+    $output = preg_replace('/<h2[^>]*>.*?<\/h2>/', '', $output);
+    $output = preg_replace('/<div class="nav-links"[^>]*>/', '', $output);
+    $output = str_replace('</div>', '', $output);
+
+    return $output;
+}
 ?>
