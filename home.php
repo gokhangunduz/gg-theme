@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <main class="space-y-10">
     <?php if (have_posts()):
         while (have_posts()):
@@ -21,8 +22,19 @@
                     <p><?php the_excerpt(); ?></p>
                 </div>
             </article>
-            <?php
-        endwhile;
-    endif; ?>
+        <?php endwhile; ?>
+
+    <?php
+    the_posts_pagination([
+        'prev_text' => sprintf('&laquo; %s', esc_html(_x('Previous', 'previous set of posts', 'default'))),
+        'next_text' => sprintf('%s &raquo;', esc_html(_x('Next', 'next set of posts', 'default'))),
+        ]);
+    ?>
+
+
+    <?php else: ?>
+        <p><?php _e('Hiç içerik bulunamadı.', 'textdomain'); ?></p>
+    <?php endif; ?>
 </main>
+
 <?php get_footer(); ?>

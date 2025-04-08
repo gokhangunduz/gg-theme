@@ -7,18 +7,21 @@ if (post_password_required()) {
 
     <?php if (have_comments()): ?>
         <div>
-            <h2 class="comments-title mb-6 text-lg font-semibold">
-                <?php printf(
-                    _nx(
-                        '%1$s Yorum',
-                        '%1$s Yorum',
-                        get_comments_number(),
-                        "comments title",
-                        "textdomain"
-                    ),
-                    number_format_i18n(get_comments_number())
-                ); ?>
-            </h2>
+            <h3>
+    <?php
+    $count = get_comments_number();
+    printf(
+        esc_html(_n(
+            '%s Comment',
+            '%s Comments',
+            $count,
+            'textdomain'
+        )),
+        number_format_i18n($count)
+    );
+    ?>
+</h3>
+
 
             <ol class="comment-list space-y-6">
                 <?php wp_list_comments([
@@ -59,8 +62,6 @@ if (post_password_required()) {
 
     <?php comment_form([
         "logged_in_as" => "",
-        "comment_notes_before" => "",
-        "comment_notes_after" => "",
         "fields" => [
             "author" => sprintf(
                 '<input placeholder="%s" name="author" type="text" required>
@@ -74,7 +75,6 @@ if (post_password_required()) {
             esc_attr(__("Comment", "default"))
         ),
         "must_log_in" => "",
-        "cookies" => false,
         "submit_button" =>
             '<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>',
         "submit_field" => '%1$s %2$s',

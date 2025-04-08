@@ -207,17 +207,6 @@ article[id="single"] {
   }
 }
 
-@keyframes rotateIn {
-  0% {
-    opacity: 0;
-    transform: rotate(0deg);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(360deg);
-  }
-}
-
 main,
 article[id="single"],
 footer {
@@ -236,10 +225,4 @@ nav {
   animation-duration: 1s;
   animation-fill-mode: both;
   animation-name: fadeInRight;
-}
-
-#theme-toggle {
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  animation-name: rotateIn;
 }

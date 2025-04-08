@@ -9,6 +9,10 @@ function themeSettings()
     register_nav_menus(array(
         'main-menu' => __('Main Menu', 'gg')
     ));
+
+    add_filter('excerpt_more', function () {
+    return '...';
+});
 }
 
 function themeAssets()
