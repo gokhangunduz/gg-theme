@@ -6,7 +6,9 @@
             <article class="flex gap-6 items-start">
                 <?php if (has_post_thumbnail()): ?>
                     <a href="<?php the_permalink(); ?>" class="flex-shrink-0">
-                        <?php the_post_thumbnail('medium', ['class' => 'rounded-lg w-96 h-auto object-cover']); ?>
+                        <?php the_post_thumbnail("medium", [
+                            "class" => "rounded-lg w-96 h-auto object-cover",
+                        ]); ?>
                     </a>
                 <?php endif; ?>
 
@@ -19,6 +21,8 @@
                     <p><?php the_excerpt(); ?></p>
                 </div>
             </article>
-        <?php endwhile; endif; ?>
+            <?php
+        endwhile;
+    endif; ?>
 </main>
 <?php get_footer(); ?>

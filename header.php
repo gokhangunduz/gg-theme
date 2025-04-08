@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php wp_title(); ?></title>
+    <meta name="description" content="<?php echo get_bloginfo(
+        "description"
+    ); ?>">
     <?php wp_head(); ?>
 </head>
 
 <body>
     <header class="sticky top-0 z-1 flex items-center justify-between">
 
-        <a href="<?php echo esc_url(home_url("/")); ?>" <h1 class="flex gap-0.5 text-xl"><?php getBlogTitle(); ?>
+        <a href="<?php echo esc_url(
+            home_url("/")
+        ); ?>" <h1 class="flex gap-0.5 text-xl"><?php getBlogTitle(); ?>
             </h1>
         </a>
 
@@ -24,4 +29,4 @@
             </div>
         </div>
     </header>
-    <?php get_template_part('template-parts/menu'); ?>
+    <?php get_template_part("template-parts/menu"); ?>

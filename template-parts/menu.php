@@ -10,8 +10,8 @@
         <?php
         $locations = get_nav_menu_locations();
 
-        if (isset($locations['main-menu'])) {
-            $menu_id = $locations['main-menu'];
+        if (isset($locations["main-menu"])) {
+            $menu_id = $locations["main-menu"];
             $menu_items = wp_get_nav_menu_items($menu_id);
 
             if ($menu_items): ?>
@@ -31,7 +31,9 @@
     </div>
 
     <div class="flex flex-col items-center gap-4 text-center text-sm ">
-        <p class="text-xs">&copy; <?php echo date("Y"); ?> • <?php bloginfo("name"); ?></p>
+        <p class="text-xs">&copy; <?php echo date("Y"); ?> • <?php bloginfo(
+                "name"
+            ); ?></p>
     </div>
 
 </nav>
