@@ -76,7 +76,26 @@ Line.prototype = {
   },
 };
 
-function onMousemove(e) {
+function handleRender() {
+  ctx.globalCompositeOperation = "source-over";
+  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  ctx.globalCompositeOperation = "lighter";
+  ctx.strokeStyle = "hsla(" + Math.round(f.update()) + ",90%,50%,0.25)";
+  ctx.lineWidth = 1;
+  for (var e, t = 0; t < E.trails; t++) {
+    (e = lines[t]).update();
+    e.draw();
+  }
+  ctx.frame++;
+  window.requestAnimationFrame(handleRender);
+}
+
+function handleResize() {
+  ctx.canvas.width = window.innerWidth;
+  ctx.canvas.height = window.innerHeight;
+}
+
+function onMouseMove(e) {
   function o() {
     lines = [];
     for (var e = 0; e < E.trails; e++)
@@ -88,39 +107,11 @@ function onMousemove(e) {
       : ((pos.x = e.clientX), (pos.y = e.clientY)),
       e.preventDefault();
   }
-  function l(e) {
-    1 == e.touches.length &&
-      ((pos.x = e.touches[0].pageX), (pos.y = e.touches[0].pageY));
-  }
-  document.removeEventListener("mousemove", onMousemove),
-    document.removeEventListener("touchstart", onMousemove),
+  document.removeEventListener("mousemove", onMouseMove),
     document.addEventListener("mousemove", c),
-    document.addEventListener("touchmove", c),
-    document.addEventListener("touchstart", l),
     c(e),
     o(),
-    render();
-}
-
-function render() {
-  if (ctx.running) {
-    ctx.globalCompositeOperation = "source-over";
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.globalCompositeOperation = "lighter";
-    ctx.strokeStyle = "hsla(" + Math.round(f.update()) + ",90%,50%,0.25)";
-    ctx.lineWidth = 1;
-    for (var e, t = 0; t < E.trails; t++) {
-      (e = lines[t]).update();
-      e.draw();
-    }
-    ctx.frame++;
-    window.requestAnimationFrame(render);
-  }
-}
-
-function resizeCanvas() {
-  ctx.canvas.width = window.innerWidth - 20;
-  ctx.canvas.height = window.innerHeight;
+    handleRender();
 }
 
 var ctx,
@@ -143,30 +134,31 @@ function Node() {
   this.vx = 0;
 }
 
-function renderCanvas() {
-  ctx = document.getElementById("canvas").getContext("2d");
-  ctx.running = true;
-  ctx.frame = 1;
+(() => {
+  const canvas = document.createElement("canvas");
+  Object.assign(canvas.style, {
+    position: "fixed",
+    inset: "0",
+    width: "100vw",
+    height: "100vh",
+    pointerEvents: "none",
+    zIndex: "999",
+  });
+  document.body.appendChild(canvas);
+
+  ctx = Object.assign(canvas.getContext("2d"), {
+    frame: 1,
+  });
+
   f = new n({
-    phase: Math.random() * 2 * Math.PI,
+    phase: Math.random() * Math.PI * 2,
     amplitude: 85,
     frequency: 0.0015,
     offset: 285,
   });
-  document.addEventListener("mousemove", onMousemove);
-  document.addEventListener("touchstart", onMousemove);
-  document.body.addEventListener("orientationchange", resizeCanvas);
-  window.addEventListener("resize", resizeCanvas);
-  window.addEventListener("focus", () => {
-    if (!ctx.running) {
-      ctx.running = true;
-      render();
-    }
-  });
-  window.addEventListener("blur", () => {
-    ctx.running = true;
-  });
-  resizeCanvas();
-}
 
-renderCanvas();
+  document.addEventListener("mousemove", onMouseMove);
+  window.addEventListener("resize", handleResize);
+
+  handleResize();
+})();
