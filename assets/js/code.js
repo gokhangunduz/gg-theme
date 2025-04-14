@@ -1,39 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("pre > code").forEach((codeBlock) => {
-    const icon = document.createElement("i");
-    icon.classList.add(
-      "ri-file-copy-line",
+  const styles = {
+    default: ["ri-file-copy-line", "text-light-400", "border-light-400"],
+    success: ["ri-check-line", "text-green-500", "border-green-500"],
+  };
+
+  document.querySelectorAll("pre > code").forEach((code) => {
+    const btn = document.createElement("i");
+    btn.classList.add(
+      ...styles.default,
       "absolute",
       "top-3",
       "right-3",
-      "text-lg",
+      "text-md",
       "border",
       "rounded",
-      "text-light-400",
-      "border-light-400",
       "py-0.5",
       "px-1.5",
       "cursor-pointer",
       "transition-all",
-      "duration-500"
+      "duration-200"
     );
 
-    icon.onclick = () => {
-      navigator.clipboard.writeText(codeBlock.innerText).then(() => {
-        icon.classList.replace("ri-file-copy-line", "ri-check-line");
-        icon.classList.add("text-green-500");
-
+    btn.onclick = () => {
+      navigator.clipboard.writeText(code.innerText).then(() => {
+        styles.default.forEach((cls, i) =>
+          btn.classList.replace(cls, styles.success[i])
+        );
         setTimeout(() => {
-          icon.classList.replace("ri-check-line", "ri-file-copy-line");
-          icon.classList.remove("text-green-500");
+          styles.success.forEach((cls, i) =>
+            btn.classList.replace(cls, styles.default[i])
+          );
         }, 2000);
       });
     };
 
-    const pre = codeBlock.parentElement;
-
-    pre.classList.add("relative");
-
-    pre.appendChild(icon);
+    code.parentElement.classList.add("relative");
+    code.parentElement.appendChild(btn);
   });
 });

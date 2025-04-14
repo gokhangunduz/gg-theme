@@ -10,7 +10,6 @@
             "name"
         ); ?></p>
 </footer>
-<canvas id="canvas"></canvas>
 </body>
 <?php wp_footer(); ?>
 
