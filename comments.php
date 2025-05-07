@@ -3,10 +3,9 @@ if (post_password_required()) {
     return;
 } ?>
 
-<section id="comments" class="comments-area">
+<section id="comments">
 
     <?php if (have_comments()): ?>
-        <div>
             <h3>
     <?php
     $count = get_comments_number();
@@ -23,7 +22,7 @@ if (post_password_required()) {
 </h3>
 
 
-            <ol class="comment-list space-y-6">
+            <ol id="comment-list">
                 <?php wp_list_comments([
                     "style" => "ol",
                     "avatar_size" => 0,
@@ -33,7 +32,7 @@ if (post_password_required()) {
                     <li <?php comment_class(
                             "border-b border-gray-200 pb-4"
                         ); ?> id="comment-<?php comment_ID(); ?>">
-                        <div class="text-sm text-gray-600 mb-1">
+                        <div id="comment-title" >
                             <?php comment_author(); ?> |
                             <time datetime="<?php comment_time("c"); ?>">
                                 <?php echo get_comment_date(); ?>, <?php echo get_comment_time(); ?>
@@ -47,7 +46,6 @@ if (post_password_required()) {
                     },
                 ]); ?>
             </ol>
-        </div>
 
         <?php the_comments_pagination(); ?>
 

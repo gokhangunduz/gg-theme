@@ -141,6 +141,26 @@
     @apply font-mono text-xs border border-light-500 dark:border-dark-500 !py-6 !px-4 rounded-md;
   }
 
+  section[id="comments"] {
+    @apply flex flex-col gap-12;
+  }
+
+  section[id="comments"] {
+    @apply flex flex-col gap-4;
+  }
+
+  section[id="comments"] ol {
+    @apply flex flex-col gap-4;
+  }
+
+  section[id="comments"] ol li {
+    @apply flex flex-col gap-4 border-b border-light-500 dark:border-dark-500;
+  }
+
+  section[id="comments"] ol li div[id="comment-title"] {
+    @apply flex gap-2;
+  }
+
   form[id="commentform"] {
     @apply grid grid-cols-2 gap-4;
   }
